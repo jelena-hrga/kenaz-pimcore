@@ -1,0 +1,19 @@
+ <aside class="tv">
+    <h1>Kenaz TV</h1>
+    <iframe
+      width="300"
+      height="149"
+      src="{{video}}"
+      title="YouTube video player"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+    <div class="tv-text">
+      <p class="tv-date">{{ pimcore_date('tvDate', {
+          'format': 'd.m.Y',
+          'outputFormat': '%F %d, %Y'
+          })
+      }}</p>
+      <h3 class="tv-heading">{{ pimcore_input("myInput") }}</h3>
+    </div>
+  </aside>

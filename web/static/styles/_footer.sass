@@ -1,0 +1,225 @@
+footer
+  .footer-container
+    +container
+
+    .top-footer
+      display: flex
+      position: relative
+      flex-direction: column
+
+      .info-row
+        display: flex
+        gap: 5px
+
+        .kenaz-column, .newsletter-column, .tags-column
+          width: 33%
+
+          .text
+            color: #666666
+            font-family: "Bitter", serif
+            font-weight: 400
+            font-size: 14px
+            line-height: 20px
+            padding-top: 23px
+
+          .heading
+            +BitterBold
+            font-size: 24px
+            line-height: 19px
+            color: #cccccc
+            padding-top: 23px
+
+
+      .news-row
+        display: flex
+        gap: 20px
+
+        .featured-column, .random-column, .twitter-column
+          width: 33%
+
+        .twitter-column
+          .twitter-feed
+            // @extend .footernews-heading
+            margin-bottom: 20px
+
+          .twitter-post
+            margin-top: 34px
+
+          .twitter-username
+            font-family: "Bitter", serif
+            font-weight: 400
+            font-size: 14px
+            line-height: 16px
+            color: #666666
+            padding-left: 4px
+
+          .twitter-text
+            +VarelaRound
+            font-size: 13px
+            line-height: 18px
+            color: #cccccc
+
+      .kenaz-column
+        .logo
+          display: flex
+          gap: 6px
+
+          h1
+            padding-left: 18px
+            display: inline
+            font-family: "Bitter", serif
+            font-weight: 400
+            font-size: 30px
+            line-height: 52px
+            color: #45b0e3
+
+        .icons
+          display: flex
+          flex-wrap: wrap
+          margin: 19px 0 84px 0
+
+          .icon
+            margin-top: 4px
+
+          .wifi
+            +icons-size
+            background-color: $tech
+
+          .facebook
+            +icons-size
+            background-color: #39599f
+            padding: 8px 14px 9px 13px
+
+          .twitter
+            +icons-size
+            background-color: #45b0e3
+            padding: 10px 7px
+
+          .ball
+            +icons-size
+            background-color: #d97aa5
+
+          .empty
+            +icons-size
+            background-color: #65b7d2
+
+          .youtube
+            +icons-size
+            background-color: #e70031
+
+          .skype
+            +icons-size
+            background-color: #00c6ff
+
+      .newsletter-column
+        .heading
+          padding-bottom: 8px
+
+        .subscribe
+          margin: 25px 0 69px 0
+          display: flex
+
+          .subscribe-input
+            width: 190px
+            height: 53px
+            background-color: #333333
+            border: none
+            +VarelaRound
+            font-size: 16px
+            line-height: 20px
+            color: #999999
+            padding-left: 10px
+
+          .subscribe-btn
+            width: 112px
+            height: 53px
+            border: none
+            background-color: #4d4382
+            +VarelaRound
+            font-size: 16px
+            line-height: 20px
+            color: #cccccc
+            cursor: pointer
+
+      .tags-column
+        .tags
+          max-width: 330px
+          display: flex
+          flex-wrap: wrap
+          gap: 3px
+          margin-top: 31px
+          margin-bottom: 75px
+
+          span
+            background-color: #333333
+            padding: 3px 12px
+
+            a
+                text-decoration: none
+                +VarelaRound
+                font-size: 12px
+                line-height: 20px
+                color: #666666
+
+          .active
+            background-color: #4d4382
+            color: #cccccc
+
+        
+
+    .bottom-footer
+      +VarelaRound
+      font-size: 12px
+      line-height: 14.5px
+      color: #999999
+      display: flex
+      justify-content: space-between
+      border-top: 1px solid rgba(102, 102, 102, 0.2)
+      margin-top: 63px
+      padding-top: 18px
+
+      a
+        text-decoration: none
+        color: #999999
+
+  padding-top: 54px
+  margin-top: 19px
+  border-top: 23px solid #4d4382
+  min-height: 992px
+  background-color: #252525
+
+
+@media screen and (max-width: 940px)
+  footer
+    padding-left: 10px
+
+    .icons
+      padding-bottom: 53px
+
+    .tags
+      padding-bottom: 20px
+
+  .icon 
+    +icons-size--responsive  
+
+@media screen and (max-width: 600px)
+  .info-row
+    flex-direction: column
+
+  .news-row
+    flex-direction: column
+
+  .icons
+    margin-bottom: 10px !important
+
+  .kenaz-column, .newsletter-column, .tags-column    
+    width: 100% !important
+    margin: 0 auto
+
+  .featured-column, .random-column, .twitter-column
+    width: 100% !important
+
+@media screen and (max-width: 400px)
+  .bottom-footer
+    flex-direction: column
+    gap: 15px

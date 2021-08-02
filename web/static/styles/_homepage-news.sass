@@ -1,0 +1,128 @@
+$border: 9px solid
+
+.categories
+  max-width: 100%
+
+.category
+  margin-top: 19px
+  max-width: 622px
+  height: 325px
+  padding: 15px 12px 28px 30px
+  background-color: white
+
+  .heading
+    display: flex
+    justify-content: space-between
+    padding-bottom: 30px
+
+    h1
+      +BitterBold
+      font-size: 24px
+      line-height: 30px
+      color: #363f48
+
+    a
+      +VarelaRound
+      font-size: 14px
+      line-height: 17px
+      align-self: flex-end
+      color: #3677b5
+      text-decoration: none
+      margin-right: 20px
+      border-bottom: 1px solid rgba(54, 119, 181, 0.3)
+
+  .news
+    display: flex
+    flex-direction: row
+    gap: 20px
+    flex-wrap: wrap
+
+    .news-article
+      text-decoration: none
+      max-width: 170px
+      cursor: pointer
+      display: flex
+      flex-direction: column
+
+      .news-image
+        height: 128px
+        width: 170px
+
+      .news-date
+        +VarelaRound
+        font-size: 12px
+        line-height: 14.5px
+        color: #666666
+        padding-top: 6px
+
+      .news-heading
+        +BitterBold
+        font-size: 14px
+        line-height: 18px
+        color: #363f48
+        text-decoration: none
+
+    //   .news-num
+    //     padding-left: 59px
+
+    .business .news-article
+      display: flex
+      gap: 0 !important
+      margin-bottom: 30px
+
+      .news-image
+        width: 120px
+        height: 90px
+        margin-right: 15px
+
+      .business-text
+        flex-shrink: 0 !important
+        width: 154px
+        height: 85px
+
+.news-border
+  border-left: $border $news
+
+.sport-border
+  border-left: $border $sport
+
+.business-border
+  border-left: $border $business
+
+.business
+  margin-top: 10px
+  display: flex
+  flex-direction: row !important
+  gap: 15px
+  max-width: 270px !important
+
+
+@media screen and (max-width: 940px)
+  .main
+    margin-left: 10px
+
+  .categories
+    max-width: 60%
+  
+  .side-content
+    max-width: 40%
+
+  .category
+    height: auto
+
+    .news
+      flex-direction: column
+      margin-left: 20%
+
+      .news-article
+        width: 230px
+
+      .news-heading
+        width: 230px
+
+      .news-image
+        width: 230px
+        height: auto
+
+      .news-num
+        padding-left: 115px  

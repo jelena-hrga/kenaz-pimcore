@@ -1,0 +1,42 @@
+.social
+  margin: 28px 0px 0px 0px
+
+  h1
+    +BitterBold
+    font-size: 24px
+    line-height: 29px
+    color: #363f48
+    margin-bottom: 16px
+
+  .facebook,
+  .twitter,
+  .youtube
+    display: flex
+    margin-bottom: 7px
+
+    .follow
+      text-decoration: none
+      height: 40px
+      width: 120px
+      text-align: left
+      +BitterBold
+      background-color: #dddddd
+      font-size: 18px
+      line-height: 18px
+      color: #363f48
+      padding: 13px 41px 12px 15px
+
+    .followers
+      +VarelaRound
+      width: 139px
+      height: 40px
+      font-size: 14px
+      line-height: 17px
+      padding: 12px 0px 0px 16px
+      background-color: #4d4382
+      color: white
+
+@media screen and (max-width: 940px)
+  .followers
+    font-size: 12px !important
+    padding-left: 4px !important

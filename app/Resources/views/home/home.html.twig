@@ -1,0 +1,25 @@
+{% extends '/layouts/layout.html.twig' %}
+
+{% block content %}
+
+{{ pimcore_snippet("header") }}
+
+<div class = "wrapper">
+    {{ pimcore_areablock("myAreablock") }}
+    <div class="main">
+        <div class="categories">
+            {{ pimcore_areablock("newsAreablock") }}
+            <div class="single-carousels">
+                {{ pimcore_areablock("carouselsAreablock") }}
+            </div>
+        </div>
+        <div class="side-content">
+            {{ pimcore_areablock("sidebarAreablock") }}
+        </div>
+    </div>
+    {{ pimcore_areablock("galleryAreablock") }}
+</div>
+
+{{ pimcore_snippet("footer") }}
+
+{% endblock %}

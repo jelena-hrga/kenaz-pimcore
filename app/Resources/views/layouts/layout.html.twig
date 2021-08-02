@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    {# <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon/favicon-16x16.png"> #}
+    {# <link rel="manifest" href="/static/icons/favicon/site.webmanifest"> #}
+    {# <link rel="stylesheet" type="text/css" href="static/styles/main.css"> #}
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    {% if pimcore_head_title().count() == 0 %}
+        {% if document and document.getTitle() is not empty %}
+            {% do pimcore_head_title().set(document.getTitle()) %}
+        {% endif %}
+    {% endif %}
+
+    {% if document.getDescription() is not empty %}
+        {% do pimcore_head_meta().setDescription(document.getDescription()) %}
+    {% endif %}
+
+    {% block layout_head_meta deferred %}
+    {{ pimcore_head_title() }}
+    {{ pimcore_head_meta() }}
+
+    {% if pimcore_placeholder('canonical').count() %}
+        <link rel="canonical" href="{{ pimcore_placeholder('canonical') }}"/>
+    {% endif %}
+    {% endblock %}
+
+    {% do pimcore_head_link().appendStylesheet('static/assets/css/style.css') %}
+
+    {% block head_stylesheets deferred %}
+    {{ pimcore_head_link() }}
+    {% endblock %}
+</head>
+<body>
+
+{% block content %}
+{% endblock %}
+
+{{ pimcore_inc(document.getProperty('cookieBar')) }}
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+{% do pimcore_head_script().captureStart %}
+{# var language = '{{ get_default_language() }}'; #}
+{% do pimcore_head_script().captureEnd %}
+{% do pimcore_head_script().appendFile(asset('static/assets/js/app.js')) %}
+{% block headscripts deferred %}
+{{ pimcore_head_script() }}
+{% endblock %}
+
+
+</body>
+</html>

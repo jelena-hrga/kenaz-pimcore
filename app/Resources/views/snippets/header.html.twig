@@ -1,0 +1,42 @@
+<header>
+  <div class="primary__nav">
+    <div class="container-top">
+      <nav class="primary">
+        <div class="logo">
+          {{ pimcore_image("logo", {"class": "logo-img"}) }}
+          <h1>Kenaz</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">{{ 'Media' | trans }}</a></li>
+          <li><a href="#">{{ 'Marketing' | trans }}</a></li>
+          <li><a href="#">{{ 'Contact' | trans }}</a></li>
+        </ul>
+        {{ pimcore_image("search", {"class": "search-icon"}) }}
+      </nav>
+    </div>
+  </div>
+  <div class="secondary__nav">
+    <div class="container-top">
+      <nav class="secondary">
+        <ul class="secondary-nav-links">
+          <span class="close-nav">&times;</span>
+          <li>
+            {{ pimcore_link('newsLink', {"class": "nav-news"}) }}
+          </li>
+          <li>
+            <a class="nav-business" href="#">Business</a>
+          </li>
+          <li><a class="nav-sport" href="#">Sport</a></li>
+          <li><a class="nav-life" href="#">Life</a></li>
+          <li><a class="nav-tech" href="#">Tech</a></li>
+          <li><a class="nav-travel" href="#">Travel</a></li>
+        </ul>
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

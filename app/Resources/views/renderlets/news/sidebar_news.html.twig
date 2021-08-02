@@ -1,0 +1,27 @@
+<aside class="sidebar">
+    <div class="btns">
+      <button class="active">Popular</button>
+      <button>Top Rated</button>
+      <button>Comments</button>
+    </div>
+    <div class="sidebar-news">
+      <div class="article-container">
+        {% for item in news %}
+            <article class="sidebar-article">
+                <div class="sidebar-text">
+                    <p class="sidebar-comments">
+                        <img class="comment" src="/var/assets/comment.svg" alt="" /> 5
+                    </p>
+                    <p class="sidebar-date">{{ item.publishDate | date("F d, Y") }}</p>
+                    <h3 class="sidebar-heading">
+                        {{ item.title }}
+                    </h3>
+                </div>
+                <img class="sidebar-img" src = "{{ item.featuredImage.thumbnail("sidebar") }}"/>
+            </article>
+        {% endfor %}
+      </div>
+    </div>
+</aside>
+
+

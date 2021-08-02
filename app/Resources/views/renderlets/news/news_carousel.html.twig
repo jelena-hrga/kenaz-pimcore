@@ -1,0 +1,43 @@
+{% set border = '' %}
+{% set categoryTitle = '' %}
+{% set isDouble = true %}
+{% for item in news %}
+    {% set border = item.category[0].color %}
+    {% set categoryTitle = item.category[0].title %}
+    {% if border == "#a99765ff" %}
+        {% set isDouble = false %}
+    {% endif %}
+{% endfor %}
+
+
+{% if isDouble %}
+    <section class="carouselsection-double" style="border-left: 9px solid {{ border }}">
+        <div class="heading">
+            <h1>{{ categoryTitle }}</h1>
+        </div>
+        <div class="carousel-news">
+            {% for item in news %}
+                <article class="carousel-article">
+                    {{ item.featuredImage.thumbnail("carouselnews-img").html | raw }}
+                    <p class="news-date">{{ item.publishDate | date("F d, Y") }}</p>
+                    <a class="news-heading" href="{{ path(item) }}">{{ item.title }}</a>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+{% else %}
+    <section class="carouselsection-single" style="border-left: 9px solid {{ border }}">
+        <div class="heading">
+            <h1>{{ categoryTitle }}</h1>
+        </div>
+        <div class="carousel-news-single">
+            {% for item in news %}
+                <article class="carousel-article">
+                    {{ item.featuredImage.thumbnail("carouselnews-img").html | raw }}
+                    <p class="news-date">{{ item.publishDate | date("F d, Y") }}</p>
+                    <a class="news-heading" href="{{ path(item) }}">{{ item.title }}</a>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+{% endif %}

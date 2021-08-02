@@ -1,0 +1,63 @@
+{% set border = '' %}
+{% set categoryTitle = '' %}
+{% set isBusiness = false %}
+{% set isSlider = false %}
+{% for item in news %}
+    {% set border = item.category[0].color %}
+    {% set categoryTitle = item.category[0].title %}
+    {% if categoryTitle == "Business" or categoryTitle == "Geschäft" %}
+        {% set isBusiness = true %}
+    {% endif %}
+    {% if categoryTitle == "Slider" %}
+        {% set isSlider = true %}
+    {% endif %}
+{% endfor %}
+
+{% if isSlider %}
+    <div class = "slider">
+        {% for item in news %}
+            <div class="single-slider">
+                {{ item.featuredImage.thumbnail("hero-slider").html | raw }}
+                <div class="gradient">
+                    <div class="text">
+                        <div class="top-text">
+                            <span class="date">{{ item.publishDate | date("F d, Y") }}</span>
+                            <img class="comment" src="/var/assets/comment.svg" alt="" />
+                            <span>22 comments</span>
+                        </div>
+                        <a class="slider-heading" href="{{ path(item) }}">{{ item.title }}</a>
+                    </div>
+                    <button>Read Article</button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <section class="category" style="border-left: 9px solid {{ border }}">
+        <div class="heading">
+            <h1>{{ categoryTitle }}</h1>
+            <a href="#">See all</a>
+        </div>
+        <div class="news">
+        {% if isBusiness == false %}
+            {% for item in news|slice(0, 3) %}
+                <article class="news-article">
+                    {{ item.featuredImage.thumbnail("news-image").html | raw }}
+                    <span class="news-date">{{ item.publishDate | date("F d, Y") }}</span>
+                    <a class="news-heading" href="{{ path(item) }}">{{ item.title }}</a>
+                </article>
+            {% endfor %}
+        {% else %}
+            {% for item in news|slice(0, 4) %}
+                <article class="news-article business">
+                    {{ item.featuredImage.thumbnail("business-image").html | raw }}
+                    <div class="business-text">
+                        <p class="news-date">{{ item.publishDate | date("F d, Y") }}</p>
+                        <a class="news-heading" href="{{ path(item) }}">{{ item.title }}</a>
+                    </div>
+                </article>
+            {% endfor %}
+        {% endif %}
+        </div>
+    </section>
+{% endif %}

@@ -1,0 +1,76 @@
+.sidebar
+  margin: 19px 0px 28px 0px
+  height: 667px
+  max-width: 303px
+  background-color: #4d4382
+
+  .btns
+    padding: 0px 33px 0px 32px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: rgba(0, 0, 0, 0.2)
+    height: 53px
+
+    button
+      padding: 0
+      background-color: transparent
+      border: 0px
+      cursor: pointer
+      color: white
+      +VarelaRound
+      font-size: 14px
+      line-height: 17px
+      border-bottom: 1px solid rgba(172, 179, 186, 0.3)
+
+    .active
+      color: #fcc44d
+      border-bottom: 1px solid rgba(252, 196, 77, 0.3)
+
+.sidebar-article
+  padding: 20px 33px
+  display: flex
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+  width: 100%
+  text-decoration: none
+  cursor: pointer
+
+  .sidebar-text
+    width: 172px
+
+    .sidebar-comments
+      margin-right: 30px
+      margin-bottom: 3px
+      display: flex
+      align-items: flex-end
+      justify-content: flex-end
+      color: #acb3ba
+      +VarelaRound
+      font-size: 10px
+      line-height: 12px
+
+      img
+        width: 11px
+        height: 10px
+        margin-right: 3px
+
+    .sidebar-date
+      +VarelaRound
+      font-size: 10px
+      line-height: 12px
+      color: #acb3ba
+      margin-bottom: 5px
+
+    .sidebar-heading
+      +BitterBold
+      font-size: 14px
+      line-height: 17px
+      color: white
+
+  .sidebar-img
+    border: 2px solid white
+    box-shadow: 0px 1px 1px rgba(0, 0, 1, 0.3)
+
+.sidebar-article:hover
+    background-color: rgba(0, 0, 0, 0.1)
+    

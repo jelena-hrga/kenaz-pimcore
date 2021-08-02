@@ -1,0 +1,172 @@
+.primary__nav
+  min-height: 53px
+  background-color: #252525
+
+  .container-top
+    +container
+
+  .primary
+    min-height: 53px
+    display: flex
+    align-items: center
+    color: white
+
+    .logo
+      display: flex
+
+    .logo-img
+      padding: 15px 26px 17px 23px
+      background-color: #353333
+
+    h1
+      font-family: "Bitter", serif
+      font-weight: 400
+      font-size: 24px
+      padding: 10px 0 0 9px
+
+    .search-icon
+      padding: 18px 23px 19px 23px
+      background-color: #353333
+      margin-left: 20px
+      cursor: pointer
+
+    .nav-links
+      +VarelaRound
+      display: flex
+      justify-content: flex-end
+      width: 80%
+      list-style: none
+      font-size: 14px
+      line-height: 27px
+      padding-top: 5px
+
+      a
+        text-decoration: none
+        color: white
+        padding: 0px 20px 0 20px
+
+@media screen and (max-width: 775px)
+  .primary
+    flex-direction: column
+    height: 178px
+
+    .logo-img
+      background-color: transparent !important
+
+    .nav-links
+      justify-content: space-around !important
+      font-size: 16px !important
+      margin-top: 25px
+
+    .search-icon
+      align-self: flex-end
+      margin-top: 15px
+      
+$border: 6px solid
+
+.secondary__nav
+  height: 53px
+  background-color: #4d4382
+
+  .secondary
+    height: 53px
+    display: flex
+
+  .container-top
+    +container
+
+  .burger 
+    display: none
+    cursor: pointer
+    height: 30px
+    width: 30px
+    margin-top: 15px
+    margin-left: auto
+
+  .burger div 
+    width: 30px
+    height: 4px
+    background-color: rgb(219, 219, 219)
+    margin: 5px
+
+  .secondary-nav-links
+    height: 53px
+    +BitterBold
+    display: flex
+    text-transform: uppercase
+    padding-left: 0
+    list-style: none
+    font-size: 18px
+    line-height: 22px
+    justify-content: space-around
+    max-width: 610px
+    padding-top: 10px
+
+    a
+      text-decoration: none
+      color: white
+      padding: 10px 22px 15px 22px
+
+    .close-nav
+      display: none
+
+    .nav-news
+      display: inline-block
+      background-color: #299ec3
+      padding: 15px 21px 14px 20px
+      width: 93px
+      height: 53px
+      margin-top: -10px
+
+    .nav-business
+      border-bottom: $border $business
+
+    .nav-sport
+      border-bottom: $border $sport
+
+    .nav-life
+      border-bottom: $border $life
+
+    .nav-tech
+      border-bottom: $border $tech
+
+    .nav-travel
+      border-bottom: $border $travel
+
+
+@media screen and (max-width: 775px)
+  .secondary__nav
+    height: 65px
+
+    .secondary
+      height: 65px
+      padding-right: 20px
+
+    .secondary-nav-links 
+        visibility: hidden
+        position: absolute
+        top: 0
+        right: 0px
+        height: 100vh
+        background-color: #4d4382
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 100%
+        z-index: 1000
+
+        .close-nav
+          position: absolute
+          top: 20px
+          right: 25px
+          color: #f1f1f1
+          font-size: 50px
+          font-weight: bold
+          cursor: pointer
+
+        .nav-news
+          background-color: transparent
+          border-bottom: $border #299ec3
+    
+    .burger
+      display: block
