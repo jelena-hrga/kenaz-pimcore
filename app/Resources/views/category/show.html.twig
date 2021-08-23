@@ -1,0 +1,54 @@
+{% extends '/layouts/layout.html.twig' %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="main-categorypage">
+            <section class="all-news"/>
+                <h1>{{ category.title }}</h1>                
+                {% for item in posts %}
+                    <article class="categorynews">
+                        <h3 class="categorynews-heading">
+                            {{ item.title }}
+                        </h3>
+                        <div class="categorynews_top-text">
+                            <span class="categorynews-date">
+                                <img src="/var/assets/calendar.svg" alt="" />
+                                <p>{{ item.publishDate | date("F d, Y")}}</p>
+                            </span>
+                            <p class="categorynews-author">Author: Matej Sudar</p>
+                            <p class="categorynews-comments">12 comments</p>
+                        </div>
+                        <div class="categorynews-content">
+                            <img
+                                class="categorynews-image"
+                                src="{{ item.featuredImage }}"
+                            />
+                            <div class="categorynews-text">{{ item.content | raw }}</div>
+                        </div>
+                        <a class="read-article" {#href="{{ path(item) }}"#}>Read Article</a>
+                    </article>
+                {% endfor %}
+                <div class="pages">
+                <button class="selected">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>10</button>
+                </div>
+            </section>
+            <div class="side-content">
+                {# {% include '/renderlets/news/sidebar_news.html.twig' %} #}
+                <div class="side-banners">
+                    <div class="side-banner"></div>
+                    <div class="side-banner"></div>
+                </div>
+                <div class="facebook-banner"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

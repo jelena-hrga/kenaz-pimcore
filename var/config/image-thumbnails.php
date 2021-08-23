@@ -107,13 +107,6 @@ return [
                     "width" => 940,
                     "forceResize" => FALSE
                 ]
-            ],
-            [
-                "method" => "scaleByHeight",
-                "arguments" => [
-                    "height" => 425,
-                    "forceResize" => FALSE
-                ]
             ]
         ],
         "medias" => [
@@ -129,7 +122,7 @@ return [
         "preserveMetaData" => FALSE,
         "rasterizeSVG" => FALSE,
         "downloadable" => FALSE,
-        "modificationDate" => 1627455898,
+        "modificationDate" => 1627892675,
         "creationDate" => 1627455877,
         "forcePictureTag" => FALSE,
         "id" => "hero-slider"
@@ -203,5 +196,27 @@ return [
         "creationDate" => 1627552105,
         "forcePictureTag" => FALSE,
         "id" => "sidebar"
+    ],
+    "small-slider" => [
+        "items" => [
+
+        ],
+        "medias" => [
+
+        ],
+        "name" => "small-slider",
+        "description" => "",
+        "group" => "",
+        "format" => "SOURCE",
+        "quality" => 85,
+        "highResolution" => 0.0,
+        "preserveColor" => FALSE,
+        "preserveMetaData" => FALSE,
+        "rasterizeSVG" => FALSE,
+        "downloadable" => FALSE,
+        "modificationDate" => 1627902878,
+        "creationDate" => 1627902662,
+        "forcePictureTag" => FALSE,
+        "id" => "small-slider"
     ]
 ];

@@ -29,21 +29,30 @@ footer
             color: #cccccc
             padding-top: 23px
 
-
       .news-row
         display: flex
         gap: 20px
 
-        .featured-column, .random-column, .twitter-column
-          width: 33%
+        .featured-column, .random-column
+          max-width: 303px
 
         .twitter-column
+          max-width: 320px
+          flex-shrink: 0
+
           .twitter-feed
-            // @extend .footernews-heading
+            +BitterBold
+            font-size: 24px
+            line-height: 19px
+            color: #ffffff
+            padding-top: 5px
             margin-bottom: 20px
 
           .twitter-post
             margin-top: 34px
+
+          .twitter-post:nth-child(3)
+            max-width: 193px !important
 
           .twitter-username
             font-family: "Bitter", serif

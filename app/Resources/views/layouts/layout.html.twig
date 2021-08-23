@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../slick/slick.css"/>
     {# <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon/favicon-16x16.png"> #}
@@ -40,7 +40,7 @@
     {% endif %}
     {% endblock %}
 
-    {% do pimcore_head_link().appendStylesheet('static/assets/css/style.css') %}
+    {% do pimcore_head_link().appendStylesheet('../static/assets/css/style.css') %}
 
     {% block head_stylesheets deferred %}
     {{ pimcore_head_link() }}
@@ -48,7 +48,15 @@
 </head>
 <body>
 
+{% block header %}
+    {{ pimcore_snippet("header") }}
+{% endblock %}
+
 {% block content %}
+{% endblock %}
+
+{% block footer %}
+    {{ pimcore_snippet("footer") }}
 {% endblock %}
 
 {{ pimcore_inc(document.getProperty('cookieBar')) }}
@@ -56,11 +64,11 @@
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
+<script type="text/javascript" src="../slick/slick.min.js"></script>
 {% do pimcore_head_script().captureStart %}
 {# var language = '{{ get_default_language() }}'; #}
 {% do pimcore_head_script().captureEnd %}
-{% do pimcore_head_script().appendFile(asset('static/assets/js/app.js')) %}
+{% do pimcore_head_script().appendFile(asset('../static/assets/js/app.js')) %}
 {% block headscripts deferred %}
 {{ pimcore_head_script() }}
 {% endblock %}

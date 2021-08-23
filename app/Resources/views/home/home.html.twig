@@ -1,9 +1,6 @@
 {% extends '/layouts/layout.html.twig' %}
 
 {% block content %}
-
-{{ pimcore_snippet("header") }}
-
 <div class = "wrapper">
     {{ pimcore_areablock("myAreablock") }}
     <div class="main">
@@ -15,11 +12,13 @@
         </div>
         <div class="side-content">
             {{ pimcore_areablock("sidebarAreablock") }}
+            <div class="side-banners">
+                <div class="side-banner"></div>
+                <div class="side-banner"></div>
+            </div>
+            <div class="facebook-banner"></div>
         </div>
     </div>
     {{ pimcore_areablock("galleryAreablock") }}
 </div>
-
-{{ pimcore_snippet("footer") }}
-
 {% endblock %}

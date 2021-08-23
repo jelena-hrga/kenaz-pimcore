@@ -1,0 +1,110 @@
+.main-categorypage
+  display: flex
+  .all-news
+      padding-top: 15px
+      width: 622px
+      background-color: #ffffff
+      margin-top: 19px
+      margin: 0 auto
+
+      h1
+          +BitterBold
+          font-size: 24px
+          line-height: 29px
+          color: #363f48
+          margin: 15px 0 12px 31px
+
+      .pages
+          min-height: 95px
+          padding: 32px 0 32px 30px
+
+          button
+              border: none
+              background-color: #dddddd
+              color: #4d4382
+              width: 33px
+              height: 33px
+              cursor: pointer
+              margin-right: 4px
+              margin-top: 4px
+              +VarelaRound
+              font-size: 14px
+
+          .selected
+              background-color: #4d4382
+              color: #ffffff
+
+.categorynews
+  height: 404px
+  padding: 24px 18px 0 31px
+  border-bottom: 1px solid #dddddd
+
+  .categorynews-heading
+    +BitterBold
+    font-size: 24px
+    line-height: 28px
+    color: #363f48
+    padding-bottom: 16px
+    max-width: 496px
+
+  .categorynews_top-text
+    display: flex
+    justify-content: space-between
+    width: 383px
+    +VarelaRound
+    font-size: 12px
+    line-height: 14.5px
+    color: #666666
+    padding-bottom: 7px
+
+    .categorynews-date
+      display: flex
+      flex-direction: row
+      align-items: center
+
+      img
+        padding-right: 4px
+        padding-bottom: 2px
+
+  .categorynews-content
+    display: flex
+    gap: 20px
+
+    p
+      font-family: "Bitter", serif
+      font-weight: 400
+      font-size: 14px
+      line-height: 22px
+      color: #444444
+
+    img
+      width: 170px
+      height: 128px
+      margin-top: 9px
+
+  .read-article
+    border: none
+    background-color: #4d4382
+    text-decoration: none
+    display: inline-block
+    padding: 8px 22px
+    +VarelaRound
+    font-size: 14px
+    line-height: 17px
+    color: #ffffff
+    cursor: pointer
+    margin-left: 190px
+    margin-top: 16px
+    margin-bottom: 62px
+
+
+@media screen and (max-width: 450px)
+  .categorynews-content
+    flex-direction: column
+
+  .categorynews_top-text
+    flex-direction: column
+    gap: 7px
+
+  .read-article
+    margin-left: 0 !important

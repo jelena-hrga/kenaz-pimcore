@@ -28,4 +28,39 @@ $(document).ready(() => {
         nextArrow:
             "<img class='next-arrow' src='/var/assets/next-arrow-brown.svg'>"
     })
+
+    $('.top-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.bottom-slider'
+    });
+    $('.bottom-slider').slick({
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        asNavFor: '.top-slider',
+        dots: false,
+        focusOnSelect: true,
+        prevArrow:
+            "<img class='prev-arrow--gallery' src='/var/assets/arrow-left.svg'>",
+        nextArrow:
+            "<img class='next-arrow--gallery' src='/var/assets/arrow-right.svg'>"
+    });
+
+    $('.magnifier').on('click', (e) => {
+        let img = e.target.nextElementSibling;
+        let newImg = $('.new-image');
+        let imgDiv = $('.fullscreen-image');
+        newImg.attr("src", img.src);
+        imgDiv.css({"display": "block"});
+    })
+
+    $('.close').on('click', () => {
+        $('.fullscreen-image').css({"display": "none"});
+    })
+
+
+    // var news1 = $(".sidebar").data("news");
+    // console.log(news1);
 })

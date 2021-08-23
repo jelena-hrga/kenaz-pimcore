@@ -37,8 +37,18 @@ class CategoryController extends BaseController
      * @param Config $websiteConfig
      * @return array
      */
-    public function show(Request $request, HeadTitle $headTitle, Placeholder $placeholderHelper, TagLinkGenerator $tagLinkGenerator, Config $websiteConfig) {
+    public function showAction(Request $request, HeadTitle $headTitle, Placeholder $placeholderHelper, TagLinkGenerator $tagLinkGenerator, Config $websiteConfig) {
         $category = Category::getById($request->get('category'));
+
+
+        // $this->editmode && dodano dolje
+        if (empty($request->get('category'))) {
+            $categoryListing = new Category\Listing;
+            $categoryListing->setLimit(1);
+            $category = $categoryListing->current();
+        }
+
+        // dd($category);
 
         if (!($category instanceof Category && ($category->isPublished() || $this->verifyPreviewRequest($request, $category)))) {
             throw new NotFoundHttpException('Category not found.');

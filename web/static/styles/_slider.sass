@@ -13,20 +13,25 @@
   bottom: 0
   background-image: url("/var/assets/gradient.png")
   color: white
+
   .text
     width: 588px
     height: 113px
+
     .top-text
       +VarelaRound
       display: flex
       font-size: 12px
       line-height: 14.5px
       padding-bottom: 7px
+
       .date
         padding-right: 32px
+
       img
         padding-right: 6px
         padding-top: 1.5px
+
     .slider-heading
       +BitterBold
       color: #EEF6FA
@@ -34,17 +39,19 @@
       padding-top: 5px
       font-size: 34px
       line-height: 41px
-  button
+      margin-bottom: 10px
+
+  .read-article
     +VarelaRound
+    display: inline-block
     cursor: pointer
     border: 1px solid white
     color: white
-    width: 123px
-    height: 33px
-    padding: 0
+    padding: 8px 22px
     background-color: transparent
     font-size: 14px
     line-height: 17px
+    text-decoration: none
 
 .prev-arrow--slider
   background-repeat: no-repeat

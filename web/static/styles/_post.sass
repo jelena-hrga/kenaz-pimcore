@@ -1,0 +1,219 @@
+.image-heading
+  position: relative
+  img
+    max-width: 100%
+
+  .white-gradient
+    position: absolute
+    left: 0
+    bottom: 0
+
+  .text-heading
+    position: absolute
+    left: 30px
+    bottom: 33px
+
+    .single-date
+      +VarelaRound
+      font-size: 12px
+      line-height: 14.5px
+      color: #222222
+      padding-bottom: 15px
+
+    .single-heading
+      +BitterBold
+      font-size: 44px
+      line-height: 53px
+      color: #222222
+      max-width: 751px
+
+.text-content
+  margin-top: 19px
+  background-color: #ffffff
+  max-height: 953px
+  max-width: 622px
+
+  .single-text
+    font-family: "Bitter", serif
+    font-weight: 400
+    font-size: 14px
+    line-height: 22px
+    color: #444444
+    padding: 37px 20px 42px 30px
+
+.author
+  max-width: 622px
+  min-height: 222px
+  background-color: #ffffff
+  padding: 18px 26px 40px 31px
+
+  img
+    max-width: 100%
+    max-height: 110px
+
+  h1
+    +BitterBold
+    font-size: 24px
+    line-height: 29px
+    color: #363f48
+    margin-bottom: 30px
+
+  .author-info
+    display: flex
+    gap: 20px
+
+    p
+      +VarelaRound
+      font-size: 13px
+      line-height: 20px
+      color: #444444
+      width: 430px
+
+.comments
+  max-width: 622px
+  background-color: #ffffff
+  margin-top: 18px
+  padding: 15px 30px 30px 30px
+
+  h1
+    +BitterBold
+
+    font-size: 24px
+    line-height: 29px
+    color: #363f48
+    margin-bottom: 44px
+
+  .comment
+    display: flex
+    margin-bottom: 50px
+
+    .image-container
+      border: 2px solid #bebcbc
+      padding: 2.5px
+      background-color: #ffffff
+      width: 58px
+      height: 58px
+      margin-right: 16px
+
+    .image
+      background-color: #bebcbc
+      width: 50px
+      height: 50px
+      position: relative
+
+      img
+        position: absolute
+        left: 0
+        bottom: 0
+
+    .comment-author
+      display: flex
+
+      .name
+        font-family: "Bitter", serif
+        font-weight: 400
+        color: #4d4382
+        font-size: 18px
+        line-height: 20px
+        padding-right: 8px
+
+      .comment-date
+        +VarelaRound
+        font-size: 11px
+        line-height: 20px
+        color: #666666
+        align-self: flex-end
+        margin-top: 2px
+
+      .reply
+        margin-left: auto
+        border: none
+        background-color: transparent
+        +VarelaRound
+        font-size: 14px
+        line-height: 17px
+        color: #4d4382
+        cursor: pointer
+
+    .comment-text
+      +VarelaRound
+      font-size: 13px
+      line-height: 20px
+      color: #444444
+
+  .add-comment
+    h1
+      margin-bottom: 26.5px
+
+    p
+      +VarelaRound
+      font-size: 13px
+      line-height: 20px
+      color: #444444
+      margin-bottom: 25.5px
+
+    form
+      display: flex
+      flex-direction: column
+
+      input
+        background-color: #dddddd
+        width: 303px
+        height: 43px
+        +VarelaRound
+        font-size: 14px
+        line-height: 17px
+        padding-left: 18px
+        border: none
+        margin-bottom: 8px
+
+      .comment-input
+        width: 562px
+        height: 187px
+        padding-bottom: 155px
+
+      button
+        border: none
+        background-color: #4d4382
+        width: 153px
+        height: 53px
+        +VarelaRound
+        font-size: 14px
+        line-height: 17px
+        color: #ffffff
+        margin-top: 10px
+        cursor: pointer
+
+
+@media screen and (max-width: 930px)
+  .singlenews
+    max-width: 60%
+
+  .singlenews-img
+    max-width: 100% !important
+
+  .comment-input
+    max-width: 90%
+    min-width: 303px
+
+  .side-content
+    max-width: 40%
+
+@media screen and (max-width: 700px)
+  .singlenews
+    max-width: 100%
+
+  .single-heading
+    font-size: 30px !important
+    line-height: 40px !important
+
+  .text-heading
+    bottom: 0px !important
+
+@media screen and (max-width: 490px)
+  .single-date
+    color: white !important
+
+  .single-heading
+    font-size: 20px !important
+    line-height: 25px !important

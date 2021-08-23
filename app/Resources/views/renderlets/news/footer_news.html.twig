@@ -1,1 +1,20 @@
-Footer news here
+{% set categoryTitle = '' %}
+{% for item in news %}
+    {% set categoryTitle = item.category[0].title %}
+{% endfor %}
+
+<h1 class="footernews-heading">{{ categoryTitle }}</h1>
+{% for item in news %}
+    <section>  
+        <div class="footer-news">
+        <article class="footer-article">
+            <div class="footer-text">
+                <p class="footer-date">{{ item.publishDate | date("F d, Y") }}</p>
+                <p class="footer-num">5</p>
+                <a class="footer-heading" href={{ path(item) }}>{{ item.title }}</a>
+            </div>
+            <img class="footer-img" src = '{{ item.featuredImage }}'>
+        </article>
+        </div>
+    </section>
+{% endfor %}

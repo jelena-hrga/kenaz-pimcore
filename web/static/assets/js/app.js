@@ -92,6 +92,38 @@ $(document).ready(function () {
         prevArrow: "<img class='prev-arrow' src='/var/assets/prev-arrow-brown.svg'>",
         nextArrow: "<img class='next-arrow' src='/var/assets/next-arrow-brown.svg'>"
     });
+
+    $('.top-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.bottom-slider'
+    });
+    $('.bottom-slider').slick({
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        asNavFor: '.top-slider',
+        dots: false,
+        focusOnSelect: true,
+        prevArrow: "<img class='prev-arrow--gallery' src='/var/assets/arrow-left.svg'>",
+        nextArrow: "<img class='next-arrow--gallery' src='/var/assets/arrow-right.svg'>"
+    });
+
+    $('.magnifier').on('click', function (e) {
+        var img = e.target.nextElementSibling;
+        var newImg = $('.new-image');
+        var imgDiv = $('.fullscreen-image');
+        newImg.attr("src", img.src);
+        imgDiv.css({ "display": "block" });
+    });
+
+    $('.close').on('click', function () {
+        $('.fullscreen-image').css({ "display": "none" });
+    });
+
+    // var news1 = $(".sidebar").data("news");
+    // console.log(news1);
 });
 
 /***/ }),

@@ -1,1 +1,22 @@
-{{ gallery }}
+{# {{ dump(gallery.gallery.items) }} #}
+<div class="top-slider">
+    {% for image in gallery.gallery.items %}
+        <div class="block">
+            <img class="magnifier" src="/var/assets/magnifier.svg">
+            {{ image.thumbnail("hero-slider").html | raw }}
+        </div>
+    {% endfor %}
+</div>
+
+<div class="bottom-slider">
+    {% for image in gallery.gallery.items %}
+        <div class="slide">
+            {{ image.thumbnail("small-slider").html | raw }}
+        </div>
+    {% endfor %}
+</div>
+
+<div class="fullscreen-image">
+  <img class="new-image" alt="" />
+  <span class="close">&times;</span>
+</div>

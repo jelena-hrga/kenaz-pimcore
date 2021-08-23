@@ -4,7 +4,7 @@
         <div class="info-row">
           <div class="kenaz-column">
             <div class="logo">
-              <img src="../assets/logo-blue.svg" alt="" />
+              <img src="/var/assets/logo-blue.svg" alt="" />
               <h1>Kenaz</h1>
             </div>
             <p class="text">
@@ -26,73 +26,27 @@
             </div>
           </div>
 
-        <div class="newsletter-column">
-            {{ pimcore_areablock("footerAreablock") }}
+          <div class="newsletter-column">
+              {{ pimcore_areablock("footerAreablock") }}
+          </div>
+
+          <div class="tags-column">
+              <h1 class="heading">Tags Widget</h1>
+              {{ pimcore_areablock("tagsAreablock") }}
+          </div>
         </div>
 
-         <div class="tags-column">
-            <h1 class="heading">Tags Widget</h1>
-                {{ pimcore_areablock("tagsAreablock") }}
-              {# <span>assueverit</span>
-              <span>utroquoe</span>
-              <span>probo</span>
-              <span>assuev</span>
-              <span>probo</span>
-              <span>asuevverit</span>
-              <span>titl</span>
-              <span class="active">asuevverit</span>
-              <span>asuevverit</span>
-              <span>utroquoe</span>
-              <span>probo</span>
-              <span>asuevverit</span>
-              <span>utroquoe</span> #}
-          </div>
-
-          {# <div class="newsletter-column">
-            <h1 class="heading">Newsletter</h1>
-            <p class="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Provident, fugit vel!
-            </p>
-            <form class="subscribe">
-              <input
-                class="subscribe-input"
-                placeholder="Your mail"
-                type="text"
-              />
-              <button class="subscribe-btn">Subscribe</button>
-            </form>
-          </div>
-          <div class="tags-column">
-            <h1 class="heading">Tags Widget</h1>
-            <div class="tags">
-              <span>assueverit</span>
-              <span>utroquoe</span>
-              <span>probo</span>
-              <span>assuev</span>
-              <span>probo</span>
-              <span>asuevverit</span>
-              <span>titl</span>
-              <span class="active">asuevverit</span>
-              <span>asuevverit</span>
-              <span>utroquoe</span>
-              <span>probo</span>
-              <span>asuevverit</span>
-              <span>utroquoe</span>
-            </div>
-          </div>
-        </div> #}
-        {# <div class="news-row">
+        <div class="news-row">
           <div class="featured-column">
-            <FooterNews footerHeading="Featured" newsType="featured" />
+            {{ pimcore_areablock("featuredAreablock") }}
           </div>
           <div class="random-column">
-            <FooterNews footerHeading="Random Posts" newsType="randomposts" />
+            {{ pimcore_areablock("randomAreablock") }}
           </div>
           <div class="twitter-column">
             <h1 class="twitter-feed">Twitter Feed</h1>
             <div class="twitter-post">
-              <img src="../assets/twitter-bird.svg" alt="" />
+              <img src="/var/assets/twitter-bird.svg" alt="" />
               <span class="twitter-username">Envato @envato</span>
               <p class="twitter-text">
                 Is this your typical million dollar day in the park?
@@ -101,14 +55,14 @@
               </p>
             </div>
             <div class="twitter-post">
-              <img src="../assets/twitter-bird.svg" alt="" />
+              <img src="/var/assets/twitter-bird.svg" alt="" />
               <span class="twitter-username">Envato @envato</span>
               <p class="twitter-text">
                 Happy TrueThemes Day http://enva.to/1dRzgLD
               </p>
             </div>
             <div class="twitter-post">
-              <img src="../assets/twitter-bird.svg" alt="" />
+              <img src="/var/assets/twitter-bird.svg" alt="" />
               <span class="twitter-username">Envato @envato</span>
               <p class="twitter-text">
                 @robscri I would really want to look into what's taking so long.
@@ -116,7 +70,7 @@
               </p>
             </div>
           </div>
-        </div> #}
+        </div>
       </div>
       <div class="bottom-footer">
         <span

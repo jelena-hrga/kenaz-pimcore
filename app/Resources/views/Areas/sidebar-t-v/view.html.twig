@@ -1,8 +1,23 @@
-{{
-pimcore_renderlet('tv', {
-    "controller" : "renderlets/Tv",
-    "action" : "tv",
-    "title" : "Kenaz Tv",
-    "height" : 250
-})
-}}
+<aside class="tv">
+    <h1>Kenaz Tv</h1>
+    <iframe
+        width="300"
+        height="149"
+        src="{{video}}"
+        title="YouTube video player"
+        frameborder="0"
+        allowfullscreen
+    ></iframe>
+
+    {% if editmode %}
+        {{ pimcore_date('tvDate') }}<br/>
+        {{ pimcore_input('tvTitle') }}
+    {% else %}
+        {% set date = pimcore_date("tvDate").getData() %}
+        {% set title = pimcore_input("tvTitle").getData() %}
+        <div class="tv-text">
+            <p class="tv-date">{{ date | date("F d, Y") }}</p>
+            <h3 class="tv-heading">{{ title | trans }}</h3>
+        </div>
+    {% endif %}
+</aside>

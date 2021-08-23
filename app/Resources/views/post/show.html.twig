@@ -1,3 +1,90 @@
-{{ form_start(commentForm) }}
+{% extends '/layouts/layout.html.twig' %} 
+{% block content %}
+    <div class="wrapper">
+        <div class="banner"></div>
+        <div class="image-heading">
+            <img src="/var/assets/SingleImg.png" alt="" />
+            <img class="white-gradient" src="/var/assets/white-gradient.png" alt="" />
+            <div class="text-heading">
+                <p class="single-date">{{ post.publishDate | date("F d, Y") }}</p>
+                <p class="single-heading">
+                    {{ post.title }}
+                </p>
+            </div>
+        </div>
+        <article class="singlenews">
+            <div class="text-content">
+                <div class="single-text">
+                    {{ post.content|raw }}    
+                </div>
+                <img class="singlenews-img" src="/var/assets/notebook.png" alt="" />
+                <div class="single-text">
+                    {{ post.content|raw }}
+                </div>
+            </div>
+            <div class="banner-news"></div>
+            <div class="author">
+                <h1>About the Author</h1>
+                <div class="author-info">
+                    <img src="/var/assets/author.png" alt="" />
+                    <p>
+                        Molestias ultricies, ante quam urna ut volutpat, egestas dolor
+                        dui, nec hac ultrices nulla non netus. Placerat vehicula donec
+                        non suscipit egestas, augue vel suspendisse. Et felis venenatis
+                        blandit sed est ultrices, adipiscing urna, at aliquam nullam
+                        facilisis aliquet sapien, eget duis consectetuer tristique nunc
+                        vitae erat, mi purus nisl lorem.
+                    </p>
+                </div>
+            </div>
+            <div class="comments">
+                <h1>Comments</h1>
+                {% for comment in post.comments %}
+                    <div class="comment">
+                        <div class="image-container">
+                            <div class="image">
+                                <img src="{{ comment.authorProfileImage }}" alt="" />
+                            </div>
+                        </div>
+                        <div class="text-container">
+                            <div class="comment-author">
+                                <p class="name">{{ comment.authorName }}</p>
+                                <p class="comment-date">Jan 2nd, 2012 2:35 pm</p>
+                                <button class="reply">Reply</button>
+                            </div>
+                            <p class="comment-text">
+                                {{ comment.content }}
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+                {# <div class="add-comment">
+                    <h1>Add Your Comment</h1>
+                    <p>
+                        Molestias ultricies, ante quam urna ut volutpat, egestas dolor
+                        dui, nec hac ultrices nulla non netus. Placerat vehicula donec
+                        non suscipit egestas, augue vel suspendisse. Et felis venenatis
+                        blandit sed est ultrices, adipiscing urna.
+                    </p>
 
- {{ form_end(commentForm) }}
+                    <form>
+                        <input placeholder="Name" type="text" />
+                        <input placeholder="Email Address" type="text" />
+                        <input
+                            class="comment-input"
+                            placeholder="Comment"
+                            type="text"
+                        />
+                        <button type="submit">Submit</button>
+                    </form> #}
+                    {{ form_start(commentForm) }}
+                    {{ form_end(commentForm) }}
+                </div>
+            </div>
+        </article>
+    </div>
+{% endblock %} 
+
+{# {{ form_start(commentForm) }}
+
+{{ form_end(commentForm) }} #}

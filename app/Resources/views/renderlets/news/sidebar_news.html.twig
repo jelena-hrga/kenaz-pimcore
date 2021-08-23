@@ -1,4 +1,11 @@
-<aside class="sidebar">
+{# {{ dump(news) }} #}
+{# {% if news is defined %}
+  {% set news1 = [] %}
+  {% set news1 = news1|merge(news) %}
+  {{ dump(news1) }}
+{% endif %} #}
+
+<aside class="sidebar" {#data-news={{ news1|json_encode|raw }}#}>
     <div class="btns">
       <button class="active">Popular</button>
       <button>Top Rated</button>
@@ -13,9 +20,9 @@
                         <img class="comment" src="/var/assets/comment.svg" alt="" /> 5
                     </p>
                     <p class="sidebar-date">{{ item.publishDate | date("F d, Y") }}</p>
-                    <h3 class="sidebar-heading">
+                    <a class="sidebar-heading" href={{ path(item) }}>
                         {{ item.title }}
-                    </h3>
+                    </a>
                 </div>
                 <img class="sidebar-img" src = "{{ item.featuredImage.thumbnail("sidebar") }}"/>
             </article>

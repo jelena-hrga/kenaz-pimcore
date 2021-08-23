@@ -9,6 +9,7 @@ Fields Summary:
 - localizedfields [localizedfields]
 -- title [input]
 - color [rgbaColor]
+- seeall [link]
 - posts [reverseManyToManyObjectRelation]
 */ 
 
@@ -18,7 +19,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'category',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1609884336,
+   'modificationDate' => 1628850569,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -174,6 +175,27 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'noteditable' => false,
                  'index' => false,
                  'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+              )),
+              2 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\Link::__set_state(array(
+                 'fieldtype' => 'link',
+                 'queryColumnType' => 'text',
+                 'columnType' => 'text',
+                 'phpdocType' => '\\Pimcore\\Model\\DataObject\\Data\\Link',
+                 'name' => 'seeall',
+                 'title' => 'seeall',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => NULL,
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',

@@ -7,6 +7,7 @@ namespace AppBundle\Controller\Renderlets;
 use AppBundle\Controller\BaseController;
 use AppBundle\Repositories\TvRepository;
 use Symfony\Component\HttpFoundation\Request;
+use Pimcore\Model\DataObject;
 
 class TvController extends BaseController
 {
