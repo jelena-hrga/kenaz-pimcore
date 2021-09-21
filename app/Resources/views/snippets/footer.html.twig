@@ -27,21 +27,33 @@
           </div>
 
           <div class="newsletter-column">
-              {{ pimcore_areablock("footerAreablock") }}
+              {% include '/Areas/newsletter/view.html.twig' %}
           </div>
 
           <div class="tags-column">
               <h1 class="heading">Tags Widget</h1>
-              {{ pimcore_areablock("tagsAreablock") }}
+              {% if app.request.pathinfo == '/_fragment' %}
+                {{ pimcore_areablock("tagsAreablock") }}
+              {% else %}
+                {% include 'renderlets/tags/tag.html.twig' %}
+              {% endif %}
           </div>
         </div>
 
         <div class="news-row">
           <div class="featured-column">
-            {{ pimcore_areablock("featuredAreablock") }}
+            {% if app.request.pathinfo == '/_fragment' %}
+              {{ pimcore_areablock("featuredAreablock") }}
+            {% else %}
+              {% include 'renderlets/news/footer_news.html.twig' %}
+            {% endif %}
           </div>
           <div class="random-column">
-            {{ pimcore_areablock("randomAreablock") }}
+            {% if app.request.pathinfo == '/_fragment' %}
+              {{ pimcore_areablock("randomAreablock") }}
+            {% else %}
+              {% include 'renderlets/news/footer_news.html.twig' with {'categoryTitle': 'Random News'} %}
+            {% endif %}
           </div>
           <div class="twitter-column">
             <h1 class="twitter-feed">Twitter Feed</h1>

@@ -122,8 +122,14 @@ $(document).ready(function () {
         $('.fullscreen-image').css({ "display": "none" });
     });
 
-    // var news1 = $(".sidebar").data("news");
-    // console.log(news1);
+    $('#authorName').attr('placeholder', 'Name');
+    $('#authorEmail').attr('placeholder', 'Email Address');
+    $('textarea').attr('placeholder', 'Comment');
+
+    if (window.location.href.includes('epage')) {
+        var randomNews = $('.random-column');
+        randomNews.children('.footernews-heading').text('Random News');
+    }
 });
 
 /***/ }),

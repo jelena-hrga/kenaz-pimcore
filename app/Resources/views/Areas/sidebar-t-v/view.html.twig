@@ -16,8 +16,10 @@
         {% set date = pimcore_date("tvDate").getData() %}
         {% set title = pimcore_input("tvTitle").getData() %}
         <div class="tv-text">
-            <p class="tv-date">{{ date | date("F d, Y") }}</p>
-            <h3 class="tv-heading">{{ title | trans }}</h3>
+            {# <p class="tv-date">{{ date | date("F d, Y") }}</p>
+            <h3 class="tv-heading">{{ title | trans }}</h3> #}
+            <p class="tv-date">August 03, 2021</p>
+            <h3 class="tv-heading">NASA releases portrait of a planet waving at Saturn</h3>
         </div>
     {% endif %}
 </aside>

@@ -1,11 +1,4 @@
-{# {{ dump(news) }} #}
-{# {% if news is defined %}
-  {% set news1 = [] %}
-  {% set news1 = news1|merge(news) %}
-  {{ dump(news1) }}
-{% endif %} #}
-
-<aside class="sidebar" {#data-news={{ news1|json_encode|raw }}#}>
+<aside class="sidebar">
     <div class="btns">
       <button class="active">Popular</button>
       <button>Top Rated</button>
@@ -13,7 +6,7 @@
     </div>
     <div class="sidebar-news">
       <div class="article-container">
-        {% for item in news %}
+        {% for item in sidebarnews %}
             <article class="sidebar-article">
                 <div class="sidebar-text">
                     <p class="sidebar-comments">

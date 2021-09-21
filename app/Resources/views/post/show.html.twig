@@ -1,4 +1,9 @@
 {% extends '/layouts/layout.html.twig' %} 
+
+{% block header %}
+    {% include '/snippets/header.html.twig' %}
+{% endblock %}
+
 {% block content %}
     <div class="wrapper">
         <div class="banner"></div>
@@ -13,78 +18,71 @@
             </div>
         </div>
         <article class="singlenews">
-            <div class="text-content">
-                <div class="single-text">
-                    {{ post.content|raw }}    
-                </div>
-                <img class="singlenews-img" src="/var/assets/notebook.png" alt="" />
-                <div class="single-text">
-                    {{ post.content|raw }}
-                </div>
-            </div>
-            <div class="banner-news"></div>
-            <div class="author">
-                <h1>About the Author</h1>
-                <div class="author-info">
-                    <img src="/var/assets/author.png" alt="" />
-                    <p>
-                        Molestias ultricies, ante quam urna ut volutpat, egestas dolor
-                        dui, nec hac ultrices nulla non netus. Placerat vehicula donec
-                        non suscipit egestas, augue vel suspendisse. Et felis venenatis
-                        blandit sed est ultrices, adipiscing urna, at aliquam nullam
-                        facilisis aliquet sapien, eget duis consectetuer tristique nunc
-                        vitae erat, mi purus nisl lorem.
-                    </p>
-                </div>
-            </div>
-            <div class="comments">
-                <h1>Comments</h1>
-                {% for comment in post.comments %}
-                    <div class="comment">
-                        <div class="image-container">
-                            <div class="image">
-                                <img src="{{ comment.authorProfileImage }}" alt="" />
-                            </div>
-                        </div>
-                        <div class="text-container">
-                            <div class="comment-author">
-                                <p class="name">{{ comment.authorName }}</p>
-                                <p class="comment-date">Jan 2nd, 2012 2:35 pm</p>
-                                <button class="reply">Reply</button>
-                            </div>
-                            <p class="comment-text">
-                                {{ comment.content }}
-                            </p>
-                        </div>
+            <div class="singlenews-content">
+                <div class="text-content">
+                    <div class="single-text">
+                        {{ post.content|raw }}    
                     </div>
-                {% endfor %}
-                {# <div class="add-comment">
-                    <h1>Add Your Comment</h1>
-                    <p>
-                        Molestias ultricies, ante quam urna ut volutpat, egestas dolor
-                        dui, nec hac ultrices nulla non netus. Placerat vehicula donec
-                        non suscipit egestas, augue vel suspendisse. Et felis venenatis
-                        blandit sed est ultrices, adipiscing urna.
-                    </p>
-
-                    <form>
-                        <input placeholder="Name" type="text" />
-                        <input placeholder="Email Address" type="text" />
-                        <input
-                            class="comment-input"
-                            placeholder="Comment"
-                            type="text"
-                        />
-                        <button type="submit">Submit</button>
-                    </form> #}
-                    {{ form_start(commentForm) }}
-                    {{ form_end(commentForm) }}
+                    <img class="singlenews-img" src="/var/assets/notebook.png" alt="" />
+                    <div class="single-text">
+                        {{ post.content|raw }}
+                    </div>
+                </div>
+                <div class="banner-news"></div>
+                <div class="author">
+                    <h1>About the Author</h1>
+                    <div class="author-info">
+                        <img src="/var/assets/author.png" alt="" />
+                        <p>
+                            Molestias ultricies, ante quam urna ut volutpat, egestas dolor
+                            dui, nec hac ultrices nulla non netus. Placerat vehicula donec
+                            non suscipit egestas, augue vel suspendisse. Et felis venenatis
+                            blandit sed est ultrices, adipiscing urna, at aliquam nullam
+                            facilisis aliquet sapien, eget duis consectetuer tristique nunc
+                            vitae erat, mi purus nisl lorem.
+                        </p>
+                    </div>
+                </div>
+                <div class="comments">
+                    <h1>Comments</h1>
+                    {% for comment in post.comments %}
+                        <div class="comment">
+                            <div class="image-container">
+                                <div class="image">
+                                    <img src="{{ comment.authorProfileImage }}" alt="" />
+                                </div>
+                            </div>
+                            <div class="text-container">
+                                <div class="comment-author">
+                                    <p class="name">{{ comment.authorName }}</p>
+                                    <p class="comment-date">Jan 2nd, 2012 2:35 pm</p>
+                                    <button class="reply">Reply</button>
+                                </div>
+                                <p class="comment-text">
+                                    {{ comment.content }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                        {{ form_start(commentForm) }}
+                        {{ form_end(commentForm) }}
+                    </div>
+                </div>
+                <div class="side-content">
+                    {% include '/renderlets/news/sidebar_news.html.twig' %}
+                    {% include '/Areas/sidebar-social-widget/view.html.twig' %}
+                    {% include '/Areas/sidebar-t-v/view.html.twig' %}
+                    <div class="side-banners">
+                        <div class="side-banner"></div>
+                        <div class="side-banner"></div>
+                    </div>
+                    <div class="facebook-banner"></div>
                 </div>
             </div>
         </article>
     </div>
 {% endblock %} 
 
-{# {{ form_start(commentForm) }}
-
-{{ form_end(commentForm) }} #}
+{% block footer %}
+    {% include '/snippets/footer.html.twig' %}
+{% endblock %}

@@ -98,7 +98,7 @@ class CommentForm extends AbstractType
                     ]),
                 ]
             ])->add('_submit', SubmitType::class, [
-                'label' => $this->translator->trans('checkout.submit-address'),
+                'label' => $this->translator->trans('Submit'),
             ]);;
     }
 

@@ -35,7 +35,7 @@ class NewsController extends BaseController
      */
     public function footerNewsAction(Request $request)
     {
-        $this->view->news = $this->newsRepository->getNewsFromCategory($request->get('id'), 3);
+        $this->view->footernews = $this->newsRepository->getNewsFromCategory($request->get('id'), 3);
     }
 
     /**
@@ -51,6 +51,6 @@ class NewsController extends BaseController
      */
     public function sidebarNewsAction(Request $request)
     {
-        $this->view->news = $this->newsRepository->getNewsFromCategory($request->get('id'));
+        $this->view->sidebarnews = $this->newsRepository->getNewsFromCategory($request->get('id'));
     }
 }

@@ -1,3 +1,7 @@
+.singlenews 
+  display: flex
+  gap: 18px
+  
 .image-heading
   position: relative
   img
@@ -75,9 +79,52 @@
   margin-top: 18px
   padding: 15px 30px 30px 30px
 
+  label
+    display: none;
+
+  #authorName, #authorEmail
+    width: 303px
+    height: 43px
+    background: #DDDDDD
+    border: none
+    margin-bottom: 8px
+    color: #666666
+    font-family: Varela Round
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 17px
+    padding-left: 18px
+
+  textarea
+    width: 562px
+    height: 187px
+    background: #DDDDDD
+    border: none
+    margin-bottom: 18px
+    color: #666666
+    padding-left: 17px
+    padding-top: 10px
+    font-family: Varela Round
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 17px
+
+  #_submit
+    width: 153px
+    height: 53px
+    background: #4D4382
+    border: none
+    font-family: Varela Round
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 17px
+    color: #fff
+
   h1
     +BitterBold
-
     font-size: 24px
     line-height: 29px
     color: #363f48

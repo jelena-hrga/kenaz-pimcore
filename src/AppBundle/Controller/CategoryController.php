@@ -5,6 +5,9 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Repositories\CategoryRepository;
+use AppBundle\Repositories\NewsRepository;
+use AppBundle\Repositories\TagRepository;
+use AppBundle\Repositories\TvRepository;
 use AppBundle\Website\LinkGenerator\NewsLinkGenerator;
 use AppBundle\Website\LinkGenerator\TagLinkGenerator;
 use Pimcore\Config\Config;
@@ -20,11 +23,14 @@ class CategoryController extends BaseController
 {
     const PER_PAGE_RESULTS = 10;
 
-    private $categoryRepository;
+    private $categoryRepository, $newsRepository, $tagRepository, $tvRepository;
 
-    public function __construct(CategoryRepository $categoryRepository)
+    public function __construct(CategoryRepository $categoryRepository, NewsRepository $newsRepository, TagRepository $tagRepository, TvRepository $tvRepository)
     {
         $this->categoryRepository = $categoryRepository;
+        $this->newsRepository = $newsRepository;
+        $this->tagRepository = $tagRepository;
+        $this->tvRepository = $tvRepository;
     }
 
     /**
@@ -40,6 +46,10 @@ class CategoryController extends BaseController
     public function showAction(Request $request, HeadTitle $headTitle, Placeholder $placeholderHelper, TagLinkGenerator $tagLinkGenerator, Config $websiteConfig) {
         $category = Category::getById($request->get('category'));
 
+        $sidebarnews = $this->newsRepository->getNewsFromCategory(43);
+        $news = $this->newsRepository->getNewsFromCategory(27);
+        $footernews = $this->newsRepository->getNewsFromCategory(70);
+        $tags = $this->tagRepository->getTags(56);
 
         // $this->editmode && dodano dolje
         if (empty($request->get('category'))) {
@@ -47,8 +57,6 @@ class CategoryController extends BaseController
             $categoryListing->setLimit(1);
             $category = $categoryListing->current();
         }
-
-        // dd($category);
 
         if (!($category instanceof Category && ($category->isPublished() || $this->verifyPreviewRequest($request, $category)))) {
             throw new NotFoundHttpException('Category not found.');
@@ -63,7 +71,12 @@ class CategoryController extends BaseController
 
         return [
             'category' => $category,
-            'posts' => $posts
+            'posts' => $posts,
+            'sidebarnews' => $sidebarnews,
+            'news' => $news,
+            'footernews' => $footernews,
+            'tags' => $tags,
+            'video' => $this->tvRepository->getTopVideo($request)
         ];
     }
 }

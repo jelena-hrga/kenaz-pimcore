@@ -86,14 +86,14 @@ class TagLinkGenerator implements LinkGeneratorInterface
                 $fullPath = substr($document->getFullPath(), strlen($localeUrlPart));
             }
 
-            if ($document && !$fullPath) {
+            // if ($document && !$fullPath) {
 
-                if ($document->getProperty('language') === 'en') {
-                    $fullPath = $document->getProperty('newsDefaultDocument')->getFullPath();
-                } else {
-                    $fullPath = $document->getProperty('newsDefaultDocument') ? substr($document->getProperty('newsDefaultDocument')->getFullPath(), strlen($localeUrlPart)) : '';
-                }
-            }
+            //     if ($document->getProperty('language') === 'en') {
+            //         $fullPath = $document->getProperty('newsDefaultDocument')->getFullPath();
+            //     } else {
+            //         $fullPath = $document->getProperty('newsDefaultDocument') ? substr($document->getProperty('newsDefaultDocument')->getFullPath(), strlen($localeUrlPart)) : '';
+            //     }
+            // }
 
             if (strpos($fullPath, '/') === 0) {
                 $fullPath = substr($fullPath, 1);

@@ -1,10 +1,12 @@
 {% set border = '' %}
 {% set categoryTitle = '' %}
 {% set category = '' %}
+{% set link = '' %}
 {% set isBusiness = false %}
 {% set isSlider = false %}
 {% for item in news %}
     {% set border = item.category[0].color %}
+    {% set link = item.category[0].seeall %}
     {% set categoryTitle = item.category[0].title %}
     {% set category = item.category[0] %}
     {% if categoryTitle == "Business" or categoryTitle == "Geschäft" %}
@@ -39,6 +41,7 @@
         <div class="heading">
             <h1>{{ categoryTitle }}</h1>
             <a href="{{ path(category) }}">See all</a>
+            {# {{ link | raw }} #}
         </div>
         <div class="news">
         {% if isBusiness == false %}

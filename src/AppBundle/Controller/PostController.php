@@ -8,6 +8,9 @@ use AppBundle\Form\CommentForm;
 use AppBundle\Repositories\CategoryRepository;
 use AppBundle\Repositories\CommentRepository;
 use AppBundle\Repositories\PostRepository;
+use AppBundle\Repositories\NewsRepository;
+use AppBundle\Repositories\TagRepository;
+use AppBundle\Repositories\TvRepository;
 use AppBundle\Website\LinkGenerator\NewsLinkGenerator;
 use AppBundle\Website\LinkGenerator\PostLinkGenerator;
 use AppBundle\Website\LinkGenerator\TagLinkGenerator;
@@ -27,7 +30,7 @@ class PostController extends BaseController
 {
     const PER_PAGE_RESULTS = 10;
 
-    private $postRepository;
+    private $postRepository, $newsRepository, $tagRepository, $tvRepository;
 
     private $commentRepository;
 
@@ -38,12 +41,18 @@ class PostController extends BaseController
     public function __construct(PostRepository $postRepository,
                                 PostLinkGenerator $postLinkGenerator,
                                 TranslatorInterface $translator,
-                                CommentRepository $commentRepository)
+                                CommentRepository $commentRepository,
+                                NewsRepository $newsRepository,
+                                TagRepository $tagRepository,
+                                TvRepository $tvRepository)
     {
         $this->postRepository = $postRepository;
         $this->commentRepository = $commentRepository;
         $this->translator = $translator;
         $this->postLinkGenerator = $postLinkGenerator;
+        $this->newsRepository = $newsRepository;
+        $this->tagRepository = $tagRepository;
+        $this->tvRepository = $tvRepository;
     }
 
     /**
@@ -58,6 +67,11 @@ class PostController extends BaseController
      */
     public function show(Request $request, HeadTitle $headTitle, Placeholder $placeholderHelper, TagLinkGenerator $tagLinkGenerator, Config $websiteConfig) {
         $post = Post::getById($request->get('post'));
+
+        $sidebarnews = $this->newsRepository->getNewsFromCategory(43);
+        $news = $this->newsRepository->getNewsFromCategory(27);
+        $footernews = $this->newsRepository->getNewsFromCategory(70);
+        $tags = $this->tagRepository->getTags(56);
 
         if (!($post instanceof Post && ($post->isPublished() || $this->verifyPreviewRequest($request, $post)))) {
             throw new NotFoundHttpException('Post not found.');
@@ -81,7 +95,12 @@ class PostController extends BaseController
         return [
             'post' => $post,
             'banners' => $banners,
-            'commentForm' => $form->createView()
+            'commentForm' => $form->createView(),
+            'sidebarnews' => $sidebarnews,
+            'news' => $news,
+            'footernews' => $footernews,
+            'tags' => $tags,
+            'video' => $this->tvRepository->getTopVideo($request)
         ];
     }
 }

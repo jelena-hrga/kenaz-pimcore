@@ -1,7 +1,30 @@
 {% extends '/layouts/layout.html.twig' %}
 
+{% block header %}
+    {% include '/snippets/header.html.twig' %}
+{% endblock %}
+
 {% block content %}
     <div class="wrapper">
+        <div class="banner"></div>
+        <div class = "slider">
+            {% for item in news %}
+                <div class="single-slider">
+                    {{ item.featuredImage.thumbnail("hero-slider").html | raw }}
+                    <div class="gradient">
+                        <div class="text">
+                            <div class="top-text">
+                                <span class="date">{{ item.publishDate | date("F d, Y") }}</span>
+                                <img class="comment" src="/var/assets/comment.svg" alt="" />
+                                <span>22 comments</span>
+                            </div>
+                            <a class="slider-heading" href="{{ path(item) }}">{{ item.title }}</a>
+                        </div>
+                        <a class="read-article" href={{ path(item) }}>Read Article</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
         <div class="main-categorypage">
             <section class="all-news"/>
                 <h1>{{ category.title }}</h1>                
@@ -42,7 +65,9 @@
                 </div>
             </section>
             <div class="side-content">
-                {# {% include '/renderlets/news/sidebar_news.html.twig' %} #}
+                {% include '/renderlets/news/sidebar_news.html.twig' %}
+                {% include '/Areas/sidebar-social-widget/view.html.twig' %}
+                {% include '/Areas/sidebar-t-v/view.html.twig' %}
                 <div class="side-banners">
                     <div class="side-banner"></div>
                     <div class="side-banner"></div>
@@ -51,4 +76,8 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block footer %}
+    {% include '/snippets/footer.html.twig' %}
 {% endblock %}

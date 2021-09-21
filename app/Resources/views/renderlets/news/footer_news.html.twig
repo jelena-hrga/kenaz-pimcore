@@ -1,10 +1,10 @@
 {% set categoryTitle = '' %}
-{% for item in news %}
+{% for item in footernews %}
     {% set categoryTitle = item.category[0].title %}
 {% endfor %}
 
 <h1 class="footernews-heading">{{ categoryTitle }}</h1>
-{% for item in news %}
+{% for item in footernews %}
     <section>  
         <div class="footer-news">
         <article class="footer-article">

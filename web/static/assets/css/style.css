@@ -1467,6 +1467,12 @@ footer .footer-container .bottom-footer a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 20px;
+  gap: 18px;
+}
+
+.main-categorypage .side-content {
+  margin-top: -18px;
 }
 
 .main-categorypage .all-news {
@@ -1619,6 +1625,13 @@ footer .footer-container .bottom-footer a {
   }
 }
 
+.singlenews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 18px;
+}
+
 .image-heading {
   position: relative;
 }
@@ -1715,6 +1728,55 @@ footer .footer-container .bottom-footer a {
   background-color: #ffffff;
   margin-top: 18px;
   padding: 15px 30px 30px 30px;
+}
+
+.comments label {
+  display: none;
+}
+
+.comments #authorName,
+.comments #authorEmail {
+  width: 303px;
+  height: 43px;
+  background: #DDDDDD;
+  border: none;
+  margin-bottom: 8px;
+  color: #666666;
+  font-family: Varela Round;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 18px;
+}
+
+.comments textarea {
+  width: 562px;
+  height: 187px;
+  background: #DDDDDD;
+  border: none;
+  margin-bottom: 18px;
+  color: #666666;
+  padding-left: 17px;
+  padding-top: 10px;
+  font-family: Varela Round;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.comments #_submit {
+  width: 153px;
+  height: 53px;
+  background: #4D4382;
+  border: none;
+  font-family: Varela Round;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
 }
 
 .comments h1 {

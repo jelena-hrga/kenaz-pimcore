@@ -60,7 +60,13 @@ $(document).ready(() => {
         $('.fullscreen-image').css({"display": "none"});
     })
 
+    $('#authorName').attr('placeholder', 'Name');
+    $('#authorEmail').attr('placeholder', 'Email Address');
+    $('textarea').attr('placeholder', 'Comment');
 
-    // var news1 = $(".sidebar").data("news");
-    // console.log(news1);
+
+    if (window.location.href.includes('epage')) {
+        var randomNews = $('.random-column');
+        randomNews.children('.footernews-heading').text('Random News');
+    }
 })

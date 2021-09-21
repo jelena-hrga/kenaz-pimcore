@@ -3,7 +3,7 @@
     <div class="container-top">
       <nav class="primary">
         <div class="logo">
-          {{ pimcore_image("logo", {"class": "logo-img"}) }}
+          <img class="logo-img" src="/var/assets/logo.svg"/>
           <h1>Kenaz</h1>
         </div>
         <ul class="nav-links">
@@ -11,7 +11,7 @@
           <li><a href="#">{{ 'Marketing' | trans }}</a></li>
           <li><a href="#">{{ 'Contact' | trans }}</a></li>
         </ul>
-        {{ pimcore_image("search", {"class": "search-icon"}) }}
+        <img class="search-icon" src="/var/assets/search-icon.svg"/>
       </nav>
     </div>
   </div>
@@ -20,12 +20,8 @@
       <nav class="secondary">
         <ul class="secondary-nav-links">
           <span class="close-nav">&times;</span>
-          <li>
-            {{ pimcore_link('newsLink', {"class": "nav-news"}) }}
-          </li>
-          <li>
-            <a class="nav-business" href="#">Business</a>
-          </li>
+          <li><a class="nav-news" href="/Homepage">News</a></li>
+          <li><a class="nav-business" href="#">Business</a></li>
           <li><a class="nav-sport" href="#">Sport</a></li>
           <li><a class="nav-life" href="#">Life</a></li>
           <li><a class="nav-tech" href="#">Tech</a></li>
